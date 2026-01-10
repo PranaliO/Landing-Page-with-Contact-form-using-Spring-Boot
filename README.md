@@ -1,4 +1,4 @@
-<img width="829" height="475" alt="Screenshot 2026-01-10 231048" src="https://github.com/user-attachments/assets/d88d2614-09a3-4991-9d49-3407b5f23648" />Java Full Stack Landing Page Project
+Landing Page with Contact form using Spring Boot
 Overview
 
 This project is a modern landing page with a contact form connected to a Java Spring Boot backend. It demonstrates a complete full-stack workflow, handling frontend inputs via POST requests and processing them on the server side. This project was completed as part of the Java Full Stack Web Development Internship at Maincrafts Technology.
@@ -55,5 +55,5 @@ Connect form submissions to a database for persistent storage.
 Improve UI with frameworks like Bootstrap or Tailwind CSS.
 
 Output:
-<img width="1734" height="639" alt="Screenshot 2026-01-10 231126" src="https://github.com/user-attachments/assets/a1dd6519-69a6-4262-b374-733f41f91483" />
 <img width="829" height="475" alt="Screenshot 2026-01-10 231048" src="https://github.com/user-attachments/assets/4ad9a12c-ea8c-49a8-b40e-ae57a085ea8d" />
+<img width="1734" height="639" alt="Screenshot 2026-01-10 231126" src="https://github.com/user-attachments/assets/a1dd6519-69a6-4262-b374-733f41f91483" />
