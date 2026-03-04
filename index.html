@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contacts Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+            background: #f4f6f9;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logout-btn {
+            padding: 8px 15px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="top-bar">
+    <h2>Contact Management Dashboard</h2>
+
+    <!-- ✅ Logout Form -->
+    <form action="/logout" method="post">
+        <button type="submit" class="logout-btn">Logout</button>
+    </form>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+
+    <tbody id="contactTable"></tbody>
+</table>
+
+<script>
+
+fetch("/contacts")
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Unauthorized or error fetching data");
+    }
+    return response.json();
+})
+.then(data => {
+
+    let table = document.getElementById("contactTable");
+
+    data.forEach(contact => {
+
+        let row = `
+            <tr>
+                <td>${contact.id}</td>
+                <td>${contact.name}</td>
+                <td>${contact.email}</td>
+                <td>${contact.message}</td>
+            </tr>
+        `;
+
+        table.innerHTML += row;
+    });
+
+})
+.catch(error => {
+    console.log(error);
+    alert("You are not authorized to view this page.");
+});
+
+</script>
+
+</body>
+</html>
